@@ -1,0 +1,78 @@
+site_name: D2R GUI 사용자 매뉴얼
+site_url: https://saintsc-ai.github.io/d2r-manual/
+site_description: Diablo 2 Resurrected 멀티 런처 사용자 매뉴얼
+site_author: saintsc-ai
+
+repo_name: saintsc-ai/d2r-manual
+repo_url: https://github.com/saintsc-ai/d2r-manual
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: ko
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 홈: index.md
+  - 시작하기:
+    - 설치: getting-started/installation.md
+    - 첫 실행: getting-started/first-run.md
+  - 기능 안내:
+    - 계정 관리: features/account-management.md
+    - 멀티 런처: features/multi-launcher.md
+    - 창 관리: features/window-management.md
+    - 테러존 트래커: features/terror-zone.md
+    - 우버 트래커: features/uber-tracker.md
+    - 레이아웃 관리: features/layout-manager.md
+  - 설정:
+    - 일반 설정: settings/general.md
+    - 고급 설정: settings/advanced.md
+  - FAQ: faq.md
+  - 변경 이력: changelog.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/saintsc-ai/d2r-manual
+
+copyright: Copyright &copy; 2024-2025 saintsc-ai
