@@ -8,9 +8,9 @@
 
 ## 다운로드
 
-GitHub Releases에서 최신 버전을 다운로드합니다.
+Google Drive에서 최신 버전을 다운로드합니다.
 
-[최신 버전 다운로드](https://github.com/saintsc-ai/d2r_gui/releases){ .md-button .md-button--primary }
+[최신 버전 다운로드](https://drive.google.com/drive/folders/17xfEaOYxdAdqkXL53aY0hIfSbUMHZS4S){ .md-button .md-button--primary }
 
 ## 설치 방법
 
@@ -28,8 +28,6 @@ GitHub Releases에서 최신 버전을 다운로드합니다.
 ```
 d2r_gui/
 ├── d2r_gui.exe      # 메인 실행 파일
-├── default.dat      # 계정 정보 파일 (암호화됨)
-├── d2r.ini          # 설정 파일
 └── ...
 ```
 
