@@ -123,8 +123,14 @@
 | `release key` | 키 놓기 | `release shift` |
 | `write text` | 텍스트 입력 | `write hello` |
 | `execute script` | 다른 스크립트 실행 | `execute create` |
+| `exec_script_file file` | 외부 스크립트 파일 실행 | `exec_script_file scripts\auto.script` |
 | `play file` | 사운드 재생 | `play alert.wav` |
 | `exec_ahk file` | AHK 스크립트 실행 | `exec_ahk macro.ahk` |
+
+!!! info "`execute` vs `exec_script_file`"
+    - `execute` — 프로그램에 등록된 스크립트를 **이름**으로 실행 (예: `execute create`)
+    - `exec_script_file` — 외부 `.script` 파일을 **경로**로 실행 (예: `exec_script_file scripts\auto.script`)
+    - 경로는 프로그램 실행 파일(`d2r_gui.exe`) 위치 기준 상대경로 또는 절대경로
 
 ### 반복문
 
