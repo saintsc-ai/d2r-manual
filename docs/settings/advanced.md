@@ -1,115 +1,103 @@
-# 고급 설정
+# 상세 설정
 
-설정파일(d2r.ini)을 직접 편집하여 고급 설정을 변경할 수 있습니다.
+환경설정 대화상자에서 게임 정보, 단축키, 스크립트, 스케줄, 고급 옵션을 설정할 수 있습니다.
 
-## 설정파일 위치
+## 게임 정보
 
-실행 파일과 같은 폴더의 `d2r.ini`
+게임 생성 시 사용되는 정보를 설정합니다.
 
-!!! tip "설정파일 생성"
-    **환경설정 → 환경설정 저장/읽기 → 현재 설정을 파일로 저장**
+| 항목 | 설명 | 예시 |
+|------|------|------|
+| 게임 제목 | 게임 이름 접두어 (최대 15자) | MAG |
+| 게임 번호 | 현재 게임 번호 | 1 |
+| 자릿수 | 번호 자릿수 (1~5) | 2 |
+| 비밀번호 | 게임 비밀번호 | 0402 |
 
-## 주요 설정 항목
+### 게임 이름 생성 규칙
 
-### [Settings] 섹션
+`게임 제목 + 게임 번호` 형식으로 생성됩니다.
 
-```ini
-[Settings]
-version = v3.1                    # 프로그램 버전
-digit_size = 2                    # 게임 번호 자릿수
-hangul_keyboard = False           # 한/영키 분리 키보드 사용
-launcher_wait_timeout = 30        # 배틀넷 런처 대기 시간(초)
-layout_count = 7                  # 레이아웃 개수
-masking_rate = 0.2                # 마스킹 비율
-resize_window = False             # 스크립트 실행 시 창 리사이즈
-script_delay_time = 0.09          # 스크립트 명령어 간 지연(초)
-server = Korea                    # 기본 서버
-token_headless = True             # 토큰 생성 시 브라우저 숨김
-token_otp_timeout = 30            # OTP 대기 시간(초)
-```
+- 게임 제목: `MAG`, 번호: `1`, 자릿수: `2` → `MAG01`
+- 게임 제목: `MAG`, 번호: `1`, 자릿수: `3` → `MAG001`
 
-### [Servers] 섹션
+설정 화면에서 미리보기로 생성될 게임 이름을 확인할 수 있습니다.
 
-```ini
-[Servers]
-Korea = kr.actual.battle.net
-USA = us.actual.battle.net
-Europe = eu.actual.battle.net
-Test = test.actual.battle.net
-```
+!!! warning "글자수 제한"
+    게임 이름이 15자를 초과하면 미리보기가 빨간색으로 표시됩니다.
 
-### [Game Information] 섹션
+## 단축키 관리
 
-```ini
-[Game Information]
-name = MAG                        # 게임 제목 접두어
-password = 0402                   # 게임 비밀번호
-count = 0                         # 게임 번호
-```
+### 기본 단축키
 
-## 단축키 설정
+| 단축키 | 동작 |
+|--------|------|
+| Ctrl+A | 자동 (나가기→생성/참가) |
+| Ctrl+N | 게임 생성 |
+| Ctrl+J | 게임 참가 |
+| Ctrl+X | 게임 나가기 |
+| Ctrl+L | 레거시 모드 |
+| Ctrl+T | 창 제목 토글 |
+| Ctrl+Plus | 게임 번호 증가 |
+| Ctrl+Minus | 게임 번호 감소 |
+| Ctrl+Alt+1~0 | 1~10번 클라이언트 활성화 |
 
-### [Hotkeys] 섹션
+### 사용자 정의 단축키
 
-```ini
-[Hotkeys]
-ctrl+a = auto                     # 자동
-ctrl+n = create                   # 게임 생성
-ctrl+j = join                     # 게임 참가
-ctrl+x = exit                     # 게임 나가기
-ctrl+l = legacy                   # 레거시 모드
-ctrl+t = title                    # 창 제목 토글
-ctrl+plus = plus                  # 게임 번호 증가
-ctrl+- = minus                    # 게임 번호 감소
-ctrl+alt+1 = win1                 # 1번 클라이언트 활성화
-ctrl+alt+2 = win2                 # 2번 클라이언트 활성화
-# ... win3 ~ win10
-```
+환경설정의 **단축키 관리** 탭에서 사용자 정의 단축키를 추가할 수 있습니다.
 
-### 단축키 지정 방식
+1. **단축키** 입력란을 클릭하고 원하는 키 조합 입력
+2. **스크립트** 콤보박스에서 실행할 스크립트 선택
+3. **설명** 입력 (선택사항)
+4. **추가** 버튼 클릭
 
-**방법 1: 스크립트명 사용**
+스크립트명 대신 외부 스크립트 파일 경로를 지정할 수도 있습니다.
 
-```ini
-ctrl+8 = custom1
-```
-
-`[Scripts]` 섹션에 `custom1`이 정의되어 있어야 함
-
-**방법 2: 스크립트 파일 지정**
-
-```ini
-ctrl+8 = scripts\custom1.script
-```
-
-상대경로 또는 절대경로 가능, 확장자는 `.script`만 허용
+- 상대경로 또는 절대경로 가능
+- 확장자는 `.script`만 허용
 
 ### 사용 가능한 키
 
-- 수식키: `alt`, `ctrl`, `shift`, `windows`
-- 방향키: `left alt`, `right alt`, `left ctrl` 등
+- 수식키: `Alt`, `Ctrl`, `Shift`, `Windows`
+- 방향키: `Left Alt`, `Right Alt`, `Left Ctrl` 등
 - 일반키: 알파벳, 숫자
-- 숫자패드: `num 0` ~ `num 9`, `num enter`, `num /`
+- 숫자패드: `Num 0` ~ `Num 9`, `Num Enter`, `Num /`
 
-조합 예: `ctrl+shift+a`, `alt+1`
+조합 예: `Ctrl+Shift+A`, `Alt+1`
 
 !!! warning "숫자키 구분 불가"
-    `num 1`과 `1`은 같은 키로 인식됩니다.
+    `Num 1`과 `1`은 같은 키로 인식됩니다.
 
-## 스크립트 설정
+## 스크립트 관리
 
-### [Scripts] 섹션
+환경설정의 **스크립트 관리** 탭에서 스크립트를 편집할 수 있습니다.
 
-스크립트 명령어를 정의합니다.
+### 스크립트 실행 옵션
 
-```ini
-[Scripts]
-create = activate,
-    click 850 55,
-    # ... (생략)
-    send enter,
-    sleep 0.2
-```
+| 항목 | 설명 | 범위 | 기본값 |
+|------|------|------|--------|
+| 명령어 지연 (초) | 스크립트 명령어 간 지연 시간 | 0.01~1.0 | 0.09 |
+| 스크립트 실행 전 창 크기 조정 | 실행 전 1280x720으로 리사이즈 | 체크박스 | 해제 |
+
+### 예약 스크립트
+
+다음 스크립트는 시스템에서 사용하며 삭제할 수 없습니다:
+
+- `create` - 게임 생성
+- `join` - 게임 참가
+- `exit` - 게임 나가기
+- `legacy` - 레거시 모드
+- `auto` - 자동 (나가기→생성/참가)
+- `launcher_login` - 런처 로그인
+- `launcher_execute` - 런처 실행
+- `after_launch` - 실행 후 스크립트
+- `after_launch_short` - 실행 후 스크립트 (단축)
+
+### 스크립트 편집기
+
+스크립트 선택 후 편집기에서 명령어를 작성합니다.
+
+- **문법 검사** 버튼으로 오류 확인
+- **적용** 버튼으로 변경사항 저장
 
 ### 스크립트 문법
 
@@ -123,16 +111,24 @@ create = activate,
 |--------|------|------|
 | `activate` | 창 활성화 | `activate` |
 | `click x y` | 좌표 클릭 | `click 850 55` |
+| `double_click x y` | 더블 클릭 | `double_click 400 300` |
+| `right_click x y` | 우클릭 | `right_click 400 300` |
 | `move x y` | 마우스 이동 | `move 0.5 0.5` |
 | `send key` | 키 입력 | `send enter` |
 | `copy text` | 클립보드 복사 | `copy {game_name}` |
 | `sleep n` | n초 대기 | `sleep 0.5` |
 | `beep` | 비프음 | `beep` |
 | `resize w h` | 창 크기 조정 | `resize 1280 720` |
+| `press key` | 키 누르기 (유지) | `press shift` |
+| `release key` | 키 놓기 | `release shift` |
+| `write text` | 텍스트 입력 | `write hello` |
+| `execute script` | 다른 스크립트 실행 | `execute create` |
+| `play file` | 사운드 재생 | `play alert.wav` |
+| `exec_ahk file` | AHK 스크립트 실행 | `exec_ahk macro.ahk` |
 
 ### 반복문
 
-```ini
+```
 loop {all_games},
     activate,
     beep,
@@ -149,38 +145,128 @@ end
 
 **고정 좌표**
 
-```ini
+```
 click 850 55
 ```
 
 **비율 좌표** (0 ~ 1 사이 값)
 
-```ini
+```
 click 0.5 0.5    # 정중앙
 ```
 
-## 한/영키 문제
+!!! tip "좌표 확인 방법"
+    1. 환경설정에서 **스크립트 실행 전 창 크기 조정** 활성화
+    2. 창모드에서 실행 (1280x720)
+    3. AutoHotkey의 **Windows Spy** 같은 도구로 좌표 확인
 
-103/106키 한글 키보드 사용 시 단축키가 동작하지 않는 경우:
+## 스케줄
+
+주기적으로 실행할 스크립트를 설정합니다.
+
+| 항목 | 설명 |
+|------|------|
+| 사용 여부 | 스케줄 활성화 체크박스 |
+| 스케줄 명 | 식별용 이름 |
+| 실행 간격 | 초 단위 (0~3600) |
+| 스크립트 | 실행할 스크립트 선택 |
+
+**타이머 사용** 메뉴로 스케줄을 실행합니다.
+
+!!! tip "Caps Lock 일시정지"
+    Caps Lock이 켜져 있으면 스케줄이 실행되지 않습니다.
+    마을에 들릴 때 활용하세요.
+
+## 고급 설정
+
+환경설정의 **고급 설정** 탭에서 세부 옵션을 변경할 수 있습니다.
+
+### 토큰 생성
+
+| 항목 | 설명 | 범위 | 기본값 |
+|------|------|------|--------|
+| 브라우저 숨김 (Headless) | 토큰 생성 시 브라우저 창 숨김 | 체크박스 | 활성화 |
+| OTP 대기 시간 (초) | OTP 인증 대기 시간 | 10~120 | 30 |
+
+### 배틀넷 런처
+
+| 항목 | 설명 | 범위 | 기본값 |
+|------|------|------|--------|
+| 런처 대기 시간 (초) | 배틀넷 런처 응답 대기 | 10~120 | 30 |
+| 기본 서버 | 기본 접속 서버 선택 | 콤보박스 | Korea |
+
+### 키보드
+
+| 항목 | 설명 | 기본값 |
+|------|------|--------|
+| 103/106키 키보드 사용 | 한/영키가 분리된 키보드 지원 | 활성화 |
+
+!!! note "한/영키 문제"
+    103/106키 한글 키보드 사용 시 단축키가 동작하지 않으면 이 옵션을 활성화하세요.
+
+### 창 레이아웃
+
+| 항목 | 설명 | 범위 | 기본값 |
+|------|------|------|--------|
+| 레이아웃 개수 | 저장 가능한 레이아웃 슬롯 수 | 1~20 | 7 |
+
+### 우버 추적
+
+| 항목 | 설명 | 범위 | 기본값 |
+|------|------|------|--------|
+| 확인 간격 (초) | 우버 디아블로 상태 확인 주기 | 10~300 | 30 |
+
+### 트래커 UI
+
+| 항목 | 설명 | 범위 | 기본값 |
+|------|------|------|--------|
+| 타이틀바 숨김 지연 (초) | 트래커 타이틀바 자동 숨김 시간 | 5~300 | 30 |
+
+## 설정 파일 (d2r.ini)
+
+설정 파일은 환경설정을 내보내거나 가져올 때 사용됩니다.
+
+- **내보내기**: 환경설정 → 현재 설정을 파일로 저장
+- **가져오기**: 환경설정 → 파일에서 설정 읽기
+
+!!! tip "활용"
+    다른 PC로 설정을 이전하거나 설정을 백업할 때 유용합니다.
+
+### 파일 구조
 
 ```ini
+[Settings]
+version = v4.1
+digit_size = 2
 hangul_keyboard = True
-```
+launcher_wait_timeout = 30
+layout_count = 7
+masking_rate = 0.2
+resize_window = False
+script_delay_time = 0.09
+server = Korea
+token_headless = True
+token_otp_timeout = 30
 
-## 스크립트 속도 조정
+[Servers]
+Korea = kr.actual.battle.net
+USA = us.actual.battle.net
+Europe = eu.actual.battle.net
 
-```ini
-script_delay_time = 0.1
-```
+[Game Information]
+name = MAG
+password = 0402
+count = 0
 
-- 값을 낮추면 빨라짐 (오동작 가능)
-- 값을 높이면 느려짐 (안정적)
-- 권장: 0.075 ~ 0.15
+[Hotkeys]
+ctrl+a = auto
+ctrl+n = create
+# ...
 
-개별 명령어에 지연:
+[Scripts]
+create = activate, click 850 55, ...
+# ...
 
-```ini
-create = sleep 1,      # 1초 대기 후 시작
-    click 850 55,
-    # ...
+[Schedule]
+# 스케줄명 = 간격, 스크립트, 활성화여부
 ```

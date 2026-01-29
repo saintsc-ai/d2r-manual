@@ -69,7 +69,7 @@ d2r.exe -username abc@abc.net -password mypassword
 4. OTP 사용 시 30초 이내 인증 필요
 
 !!! tip "OTP 인증 시간"
-    설정파일(d2r.ini)의 `token_otp_timeout = 30` 값으로 조정 가능
+    **환경설정 → 고급 설정 → 토큰 생성 → OTP 대기 시간**에서 조정 가능 (10~120초, 기본값: 30초)
 
 ### 수동 발급
 

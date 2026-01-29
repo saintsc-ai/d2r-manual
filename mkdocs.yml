@@ -66,7 +66,7 @@ nav:
     - 레이아웃 관리: features/layout-manager.md
   - 설정:
     - 일반 설정: settings/general.md
-    - 고급 설정: settings/advanced.md
+    - 상세 설정: settings/advanced.md
   - FAQ: faq.md
   - 변경 이력: changelog.md
 
@@ -75,4 +75,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/saintsc-ai/d2r-manual
 
-copyright: Copyright &copy; 2024-2025 saintsc-ai
+copyright: Copyright &copy; 2024-2026 saintsc-ai
