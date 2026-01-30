@@ -96,16 +96,6 @@
 2. CAPTCHA가 더 이상 뜨지 않는 것을 확인한 후 멀티로더를 사용합니다
 3. 공유기에서 **새로운 IP**를 다시 받으면 더 빨리 풀립니다
 
-### Q. 아시아(한국) 서버 접속이 안됩니다.
-
-2023년 10월부터 아시아 서버는 **명령줄 방식이 차단**되었습니다.
-
-**해결**: **웹 토큰** 방식으로 변경
-
-1. 계정 설정에서 인증 방식을 **웹 토큰**으로 변경
-2. 토큰 발급 후 저장
-3. 실행
-
 ### Q. 친구목록이 뜨지 않습니다.
 
 명령줄 실행 시 친구목록 로딩에 시간이 걸립니다.
@@ -242,7 +232,7 @@
 2. 또는 스크립트에서 `copy {game_name},` 앞에 `sleep 0.2,`를 추가합니다
 
 ```
-create = sleep 0.2,        # 잠시 대기 추가
+    sleep 0.2,        # 잠시 대기 추가
     click 850 55,
     ...
     copy {game_name},
@@ -276,7 +266,7 @@ create = sleep 0.2,        # 잠시 대기 추가
 기본적으로 auto 스크립트는 메인(master) 계정이 방을 생성합니다. 다른 계정(예: slave0)이 방을 생성하도록 변경하려면:
 
 ```
-auto = loop {all_games},
+    loop {all_games},
     execute exit,
     end,
     loop {slave0},
@@ -297,7 +287,7 @@ auto = loop {all_games},
 `/nopickup`은 실행 시 명령줄 옵션으로 지원되지 않습니다. 별도 스크립트로 채팅창을 열어 입력할 수 있습니다:
 
 ```
-send enter,
+    send enter,
     send /,
     send n,
     send o,
@@ -329,7 +319,7 @@ send enter,
 스크립트 편집기에서 `sleep` 명령어를 사용합니다.
 
 ```
-create = sleep 1,        # 1초 대기 후 시작
+    sleep 1,        # 1초 대기 후 시작
     click 850 55,
     # ...
 ```
@@ -361,7 +351,7 @@ click 0.5 0.5    # 정중앙
 레거시 관련 부분을 삭제하세요:
 
 ```
-auto = loop {all_games},
+    loop {all_games},
     execute exit,
     end,
     loop {master_game},
@@ -380,7 +370,6 @@ auto = loop {all_games},
 
 ```
 ; 메인용 나가기 스크립트 (스킨에 맞는 좌표)
-exit_main =
     activate,
     send space,
     send esc,
@@ -389,7 +378,6 @@ exit_main =
     sleep 0.2
 
 ; 오토 스크립트에서 분리
-auto =
     loop {master_game},
     execute exit_main,
     end,
@@ -585,7 +573,7 @@ mklink /j "C:\...\Diablo II Resurrected2" "C:\...\Diablo II Resurrected"
 **키보드로 나가기**:
 
 ```
-exit = activate,
+    activate,
     send esc,
     send up,
     send enter
@@ -606,7 +594,6 @@ exit = activate,
 **해결**: 설정 파일에서 `exit` 스크립트의 `send space,` 라인을 삭제하세요.
 
 ```
-exit =
     activate,
     send esc,        # send space 라인 삭제
     sleep 0.1,

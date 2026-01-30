@@ -10,7 +10,7 @@
 
 Google Drive에서 최신 버전을 다운로드합니다.
 
-[최신 버전 다운로드](https://drive.google.com/drive/folders/17xfEaOYxdAdqkXL53aY0hIfSbUMHZS4S){ .md-button .md-button--primary }
+[최신 버전 다운로드](https://saintsc-ai.github.io/d2r-manual/dist){ .md-button .md-button--primary }
 
 ## 설치 방법
 
