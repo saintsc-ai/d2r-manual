@@ -1,0 +1,91 @@
+/* 왼쪽 네비게이션: 섹션 하위 항목 들여쓰기 (navigation.sections 모드) */
+[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-left: 0.8rem !important;
+}
+
+[data-md-level="2"] > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-left: 1.2rem !important;
+}
+
+/* 왼쪽 네비게이션: 레벨별 글자 크기 */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.md-nav--nested .md-nav__link {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.md-nav--nested .md-nav--nested .md-nav__link {
+  font-size: 0.7rem;
+}
+
+/* 본문 영역: 폰트 크기 축소 */
+.md-content {
+  font-size: 0.85rem;
+}
+
+/* 본문 제목: 레벨별 크기 (본문 0.85rem 기준, 항상 크게) */
+.md-content h1 {
+  font-size: 1.25rem !important;
+}
+
+.md-content h2 {
+  font-size: 1.15rem !important;
+}
+
+.md-content h3 {
+  font-size: 1.08rem !important;
+}
+
+.md-content h4 {
+  font-size: 1.02rem !important;
+}
+
+.md-content h5 {
+  font-size: 0.96rem !important;
+}
+
+.md-content h6 {
+  font-size: 0.92rem !important;
+}
+
+/* 본문 영역: 최대 폭 확장 */
+.md-grid {
+  max-width: 1440px;
+}
+
+/* 오른쪽 TOC: 폭 확장 */
+@media screen and (min-width: 1220px) {
+  .md-sidebar--secondary {
+    width: 16rem;
+  }
+}
+
+/* 오른쪽 TOC: 긴 항목 말줄임 */
+.md-sidebar--secondary .md-nav__link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 오른쪽 TOC: 그룹 타이틀 강조 및 그룹 간 간격 */
+.md-sidebar--secondary .md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.md-sidebar--secondary .md-nav--secondary > .md-nav__list > .md-nav__item + .md-nav__item {
+  margin-top: 0.8rem;
+}
+
+/* 인라인 코드: 연한 노란색 배경 강조 */
+.md-content code:not([class*="language-"]) {
+  background-color: rgba(255, 243, 176, 0.3);
+  color: #1a1a1a;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
